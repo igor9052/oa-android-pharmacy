@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pharmacy</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="done">Done</string>
+    <string name="title_activity_item_list">ItemListActivity</string>
+    <string name="add_new">Add new...</string>
+    <string name="simple_text_example">This is simple text. This is simple text. This is simple text. This is simple text.</string>
+
+</resources>
