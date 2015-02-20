@@ -8,5 +8,8 @@
     <string name="title_activity_item_list">ItemListActivity</string>
     <string name="add_new">Add new...</string>
     <string name="simple_text_example">This is simple text. This is simple text. This is simple text. This is simple text.</string>
+    <string name="item_list_button1">button1</string>
+    <string name="item_list_button2">button2</string>
+    <string name="item_list_button3">button3</string>
 
 </resources>

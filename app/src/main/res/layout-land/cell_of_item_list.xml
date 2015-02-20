@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:transitionGroup="false">
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:padding="5dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image_view"
+        android:layout_toLeftOf="@+id/buttons"
+        android:padding="5dp"
+        android:text="Title"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_title"
+        android:layout_toRightOf="@id/image_view"
+        android:layout_toLeftOf="@+id/buttons"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="3"
+        android:padding="5dp"
+        android:text="@string/simple_text_example" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+
+        >
+        <Button
+            android:id="@+id/button1"
+            android:text="@string/item_list_button1"
+            style="@style/ThreeButtonsOnItemListLandscape"
+            />
+
+        <Button
+            android:id="@+id/button2"
+            android:text="@string/item_list_button2"
+            style="@style/ThreeButtonsOnItemListLandscape"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:text="@string/item_list_button3"
+            style="@style/ThreeButtonsOnItemListLandscape"
+            />
+    </LinearLayout>
+</RelativeLayout>
