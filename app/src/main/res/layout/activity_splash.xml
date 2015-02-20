@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#a19bed86"
+        android:gravity="center" />
+
+
+    <TextView
+        android:id="@+id/textLogo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_Logo1"
+
+        android:textColor="#ff085626"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/load_screen"
+        android:layout_below="@+id/textLogo1"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+
+        android:id="@+id/textLogo2"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+
+        android:gravity="center"
+        android:text="@string/text_Logo2"
+        android:textColor="#ff085626"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

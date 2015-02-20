@@ -9,4 +9,7 @@
     <string name="add_new">Add new...</string>
     <string name="simple_text_example">This is simple text. This is simple text. This is simple text. This is simple text.</string>
 
+    <string name="text_Logo1">Аптека</string>
+    <string name="text_Logo2">onLine</string>
+
 </resources>

@@ -1,12 +1,11 @@
 package android.oa.com.ua.pharmacy.activity;
 
-import android.app.ListActivity;
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.oa.com.ua.pharmacy.R;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
