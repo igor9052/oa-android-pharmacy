@@ -1,14 +1,14 @@
 package android.oa.com.ua.pharmacy.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.oa.com.ua.pharmacy.R;
+import android.oa.com.ua.pharmacy.activity.ItemActivity;
 import android.oa.com.ua.pharmacy.entity.IMedicineItem;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,24 +19,19 @@ import java.util.List;
  */
 public class ItemAdapter extends ArrayAdapter<IMedicineItem> {
 
-    Context context;
 
-    public ItemAdapter(Context context, int resource, List<IMedicineItem> objects) {
-        super(context, resource, objects);
-        this.context = context;
+    public ItemAdapter(Context context, List<IMedicineItem> objects) {
+        super(context, 0, objects);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         IMedicineItem item = getItem(position);
-        View v = convertView;
+        View view = View.inflate(getContext(), R.layout.cell_of_item_list, null);
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        v = inflater.inflate(R.layout.cell_of_item_list, null);
-
-        TextView title = (TextView) v.findViewById(R.id.item_title);
-        TextView description = (TextView) v.findViewById(R.id.item_description);
-        ImageView image = (ImageView) v.findViewById(R.id.image_view);
+        TextView title = (TextView) view.findViewById(R.id.item_title);
+        TextView description = (TextView) view.findViewById(R.id.item_description);
+        ImageView image = (ImageView) view.findViewById(R.id.image_view);
 
         if (title != null) {
             title.setText(item.getName());
@@ -47,8 +42,24 @@ public class ItemAdapter extends ArrayAdapter<IMedicineItem> {
         }
 
         if (image != null) {
+
             image.setImageResource(item.getImageId());
         }
-        return v;
+
+        Button detailsButton = (Button) view.findViewById(R.id.show_item_details_button);
+        detailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IMedicineItem item = getItem(position);
+                Intent intent = new Intent(ItemActivity.ACTION_SHOW_ITEM);
+                intent.putExtra(ItemActivity.EXTRA_CATEGORY_NAME, "Category");
+                intent.putExtra(ItemActivity.EXTRA_ITEM, item);
+                getContext().startActivity(intent);
+            }
+        });
+
+        return view;
     }
+
+
 }

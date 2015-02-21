@@ -12,8 +12,7 @@
         android:maxWidth="100dp"
         android:minHeight="100dp"
         android:minWidth="100dp"
-        android:padding="5dp"
-        android:src="@drawable/ic_launcher" />
+        android:padding="5dp" />
 
     <TextView
         android:id="@+id/item_title"
@@ -57,10 +56,10 @@
             android:text="button2" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/show_item_details_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="button3" />
+            android:text="@string/details_button_text" />
     </LinearLayout>
 </RelativeLayout>

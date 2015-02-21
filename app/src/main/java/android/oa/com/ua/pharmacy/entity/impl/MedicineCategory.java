@@ -3,13 +3,23 @@ package android.oa.com.ua.pharmacy.entity.impl;
 import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
 import android.oa.com.ua.pharmacy.entity.IMedicineItem;
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineCategory implements IMedicineCategory, Parcelable {
+public class MedicineCategory implements IMedicineCategory {
 
+    public static final Creator<MedicineCategory> CREATOR = new Creator<MedicineCategory>() {
+        @Override
+        public MedicineCategory createFromParcel(Parcel source) {
+            return new MedicineCategory(source);
+        }
+
+        @Override
+        public MedicineCategory[] newArray(int size) {
+            return new MedicineCategory[size];
+        }
+    };
     private String name;
     private String image;
     private List<IMedicineItem> items = new ArrayList<>();
@@ -18,6 +28,12 @@ public class MedicineCategory implements IMedicineCategory, Parcelable {
         this.name = name;
         this.image = image;
         this.items = items;
+    }
+
+    private MedicineCategory(Parcel in) {
+        name = in.readString();
+        image = in.readString();
+        in.readList(items, items.getClass().getClassLoader());
     }
 
     @Override
@@ -44,6 +60,8 @@ public class MedicineCategory implements IMedicineCategory, Parcelable {
                 '}';
     }
 
+    //Parcelable methods
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,8 +84,6 @@ public class MedicineCategory implements IMedicineCategory, Parcelable {
         return result;
     }
 
-    //Parcelable methods
-
     @Override
     public int describeContents() {
         return 0;
@@ -79,22 +95,4 @@ public class MedicineCategory implements IMedicineCategory, Parcelable {
         dest.writeString(image);
         dest.writeList(items);
     }
-
-    private MedicineCategory(Parcel in) {
-        name = in.readString();
-        image = in.readString();
-        in.readList(items, items.getClass().getClassLoader());
-    }
-
-    public static final Creator<MedicineCategory> CREATOR = new Creator<MedicineCategory>() {
-        @Override
-        public MedicineCategory createFromParcel(Parcel source) {
-            return new MedicineCategory(source);
-        }
-
-        @Override
-        public MedicineCategory[] newArray(int size) {
-            return new MedicineCategory[size];
-        }
-    };
 }

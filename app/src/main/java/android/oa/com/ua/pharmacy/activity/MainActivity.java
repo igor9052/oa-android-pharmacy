@@ -1,11 +1,11 @@
 package android.oa.com.ua.pharmacy.activity;
 
+import android.content.Intent;
 import android.oa.com.ua.pharmacy.R;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -33,6 +33,9 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(ItemListActivity.ACTION_SHOW_ITEMS_LIST);
+            intent.putExtra(ItemListActivity.EXTRA_ITEMS_LIST, 3);
+            startActivity(intent);
             return true;
         }
 

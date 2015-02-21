@@ -1,6 +1,5 @@
 package android.oa.com.ua.pharmacy.entity.impl;
 
-import android.oa.com.ua.pharmacy.R;
 import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
 import android.oa.com.ua.pharmacy.entity.IMedicineItem;
 import android.oa.com.ua.pharmacy.entity.IMedicineStorage;
@@ -26,11 +25,12 @@ public class MedicineStorageFactory {
     }
 
     private static IMedicineStorage createTestMedicineStorage() {
+
         List<IMedicineCategory> categoryList = new ArrayList<>();
         for (int i = 1; i < 10; i++) {
             List<IMedicineItem> itemList = new ArrayList<>();
             for (int k = 1; k < 20; k++) {
-                itemList.add(new MedicineItem("Item " + (i * k), R.drawable.ic_launcher, "Description " + (i*k)));
+                itemList.add(new MedicineItem("Item " + (i * k), "", "Description " + (i * k)));
             }
             categoryList.add(new MedicineCategory("Category name " + i, "", itemList));
         }

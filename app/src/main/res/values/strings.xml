@@ -11,5 +11,7 @@
     <string name="item_list_button1">button1</string>
     <string name="item_list_button2">button2</string>
     <string name="item_list_button3">button3</string>
+    <string name="title_activity_item">ItemActivity</string>
+    <string name="details_button_text">Details</string>
 
 </resources>
