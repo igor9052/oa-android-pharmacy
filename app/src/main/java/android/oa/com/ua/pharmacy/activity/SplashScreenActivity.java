@@ -19,7 +19,7 @@ public class SplashScreenActivity extends Activity {
                 // Start your app main activity
                 try {
                     Thread.sleep(2000);
-                    Intent intent = new Intent(SplashScreenActivity.this, ItemListActivity.class);
+                    Intent intent = new Intent(SplashScreenActivity.this, CatalogActivity.class);
                     startActivity(intent);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

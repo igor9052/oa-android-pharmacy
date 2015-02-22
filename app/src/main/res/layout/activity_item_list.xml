@@ -8,6 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="android.oa.com.ua.pharmacy.activity.ItemListActivity">
+
     <ListView
         android:id="@+id/list_item"
         android:layout_width="match_parent"
