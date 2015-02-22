@@ -28,7 +28,6 @@ public class ItemAdapter extends ArrayAdapter<IMedicineItem> {
     public View getView(final int position, View convertView, ViewGroup parent) {
         IMedicineItem item = getItem(position);
         View view = View.inflate(getContext(), R.layout.cell_of_item_list, null);
-
         TextView title = (TextView) view.findViewById(R.id.item_title);
         TextView description = (TextView) view.findViewById(R.id.item_description);
         ImageView image = (ImageView) view.findViewById(R.id.image_view);
@@ -52,7 +51,7 @@ public class ItemAdapter extends ArrayAdapter<IMedicineItem> {
             public void onClick(View v) {
                 IMedicineItem item = getItem(position);
                 Intent intent = new Intent(ItemActivity.ACTION_SHOW_ITEM);
-                intent.putExtra(ItemActivity.EXTRA_CATEGORY_NAME, "Category");
+                intent.putExtra(ItemActivity.EXTRA_CATEGORY_NAME, item.getCategory());
                 intent.putExtra(ItemActivity.EXTRA_ITEM, item);
                 getContext().startActivity(intent);
             }

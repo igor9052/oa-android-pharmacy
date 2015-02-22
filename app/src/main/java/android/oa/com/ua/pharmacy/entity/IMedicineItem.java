@@ -13,4 +13,6 @@ public interface IMedicineItem extends Parcelable {
     String getImage();
 
     int getImageId();
+
+    String getCategory();
 }

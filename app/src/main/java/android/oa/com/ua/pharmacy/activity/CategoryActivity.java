@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends ActionBarActivity {
+public class CategoryActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             Intent intent = new Intent(ItemListActivity.ACTION_SHOW_ITEMS_LIST);
             intent.putExtra(ItemListActivity.EXTRA_ITEMS_LIST, 3);
+            intent.putExtra(ItemListActivity.EXTRA_CATEGORY_NAME, "The best Category ever!");
             startActivity(intent);
             return true;
         }

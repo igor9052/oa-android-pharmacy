@@ -30,7 +30,7 @@ public class MedicineStorageFactory {
         for (int i = 1; i < 10; i++) {
             List<IMedicineItem> itemList = new ArrayList<>();
             for (int k = 1; k < 20; k++) {
-                itemList.add(new MedicineItem("Item " + (i * k), "", "Description " + (i * k)));
+                itemList.add(new MedicineItem("Item " + (i * k), "", "Description " + (i * k), "Category name " + i));
             }
             categoryList.add(new MedicineCategory("Category name " + i, "", itemList));
         }

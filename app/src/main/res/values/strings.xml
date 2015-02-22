@@ -13,5 +13,12 @@
     <string name="item_list_button3">button3</string>
     <string name="title_activity_item">ItemActivity</string>
     <string name="details_button_text">Details</string>
+    <string name="title_activity_add_new_item">AddNewItemActivity</string>
+    <string name="enter_name_of_medicine_edit_text">Enter name of medicine</string>
+    <string name="choose_category_text_view">Choose a category:</string>
+    <string name="write_description_edit_text">Write a description...</string>
+    <string name="save_text_button">Save</string>
+    <string name="cancel_text_button">Cancel</string>
+    <string name="title_activity_splash">SplashActivity</string>
 
 </resources>

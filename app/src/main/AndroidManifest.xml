@@ -8,32 +8,46 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name">
-            <intent-filter>
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:label="@string/app_name">
+
         </activity>
         <activity
             android:name=".activity.ItemListActivity"
             android:label="@string/title_activity_item_list">
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ItemListActivity.SHOW_ITEMS_LIST" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.ItemActivity"
             android:label="@string/title_activity_item">
-
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ItemListActivity.SHOW_ITEM" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AddNewItemActivity"
+            android:label="@string/title_activity_add_new_item">
+            <intent-filter>
+                <action android:name="android.oa.com.ua.pharmacy.activity.AddNewItemActivity.ADD_NEW_ITEM" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

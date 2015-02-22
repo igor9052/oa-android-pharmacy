@@ -23,6 +23,15 @@ public class MedicineStorage implements IMedicineStorage {
     }
 
     @Override
+    public List<String> getCategoryNames() {
+        List<String> categoryNames = new ArrayList<>(categories.size());
+        for (IMedicineCategory category : categories) {
+            categoryNames.add(category.getName());
+        }
+        return categoryNames;
+    }
+
+    @Override
     public String toString() {
         return "MedicineStorage{" +
                 "categories=" + categories +
@@ -36,7 +45,8 @@ public class MedicineStorage implements IMedicineStorage {
 
         MedicineStorage that = (MedicineStorage) o;
 
-        if (categories != null ? !categories.equals(that.categories) : that.categories != null) return false;
+        if (categories != null ? !categories.equals(that.categories) : that.categories != null)
+            return false;
 
         return true;
     }

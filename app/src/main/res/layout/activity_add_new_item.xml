@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="android.oa.com.ua.pharmacy.activity.AddNewItemActivity">
+
+    <EditText
+        android:id="@+id/item_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_name_of_medicine_edit_text" />
+
+    <TextView
+        android:id="@+id/choose_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_name_edit_text"
+        android:layout_marginTop="5dp"
+        android:text="@string/choose_category_text_view" />
+
+    <Spinner
+        android:id="@+id/category_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_category"
+        android:layout_marginTop="5dp" />
+
+    <EditText
+        android:id="@+id/item_description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category_spinner"
+        android:layout_marginTop="5dp"
+        android:hint="@string/write_description_edit_text"
+        android:maxLines="12"
+        android:minLines="8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_new_item_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel_text_button" />
+
+        <Button
+            android:id="@+id/save_new_item_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save_text_button" />
+    </LinearLayout>
+
+</RelativeLayout>
