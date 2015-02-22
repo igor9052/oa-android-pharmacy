@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a19bed86"
-    >
+    android:background="#a19bed86">
 
     <TextView
         android:id="@+id/textLogo1"
@@ -12,7 +10,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/text_Logo1"
-
         android:textColor="#ff085626"
         android:textSize="40dp"
         android:textStyle="bold" />
@@ -22,27 +19,31 @@
         android:id="@+id/imageLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/load_screen"
-        android:layout_below="@+id/textLogo1"
-
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textLogo1"
+        android:src="@drawable/load_screen" />
 
     <TextView
 
         android:id="@+id/textLogo2"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
-
         android:gravity="center"
         android:text="@string/text_Logo2"
         android:textColor="#ff085626"
         android:textSize="40dp"
         android:textStyle="bold" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_above="@+id/textLogo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
 
 
 </RelativeLayout>

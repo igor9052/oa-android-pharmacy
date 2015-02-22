@@ -12,5 +12,11 @@
     <string name="text_Logo1">Аптека</string>
     <string name="text_Logo2">onLine</string>
 
+    <string name="text_arom">Ароматерапия</string>
+    <string name="text_gome">Гомеопатия</string>
+    <string name="text_med">Изделия медицинского назначения</string>
+    <string name="text_cosm">Косметика</string>
+    <string name="text_mom">Товары для детей и мам</string>
+    <string name="text_prep">Лекарственные препараты</string>
 
 </resources>

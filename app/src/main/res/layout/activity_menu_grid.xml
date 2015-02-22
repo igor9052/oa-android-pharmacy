@@ -11,14 +11,14 @@
 
     <TextView
         android:id="@+id/textLogo1"
-        android:text="@string/text_Logo1"
-
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+        android:background="#a19bed86"
 
         android:gravity="center"
+        android:text="@string/text_Logo1"
         android:textColor="#ff085626"
-        android:background="#a19bed86"
         android:textSize="40dp"
         android:textStyle="bold" />
 
@@ -26,25 +26,23 @@
         android:id="@+id/gridView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_weight="1"
         android:gravity="center"
-        android:background="#364dff20"
-        android:numColumns="2"
         android:horizontalSpacing="20dp"
+        android:numColumns="2"
         android:verticalSpacing="20dp">
 
     </GridView>
 
     <TextView
         android:id="@+id/textLogo2"
-        android:text="@string/text_Logo2"
-
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
+        android:background="#a19bed86"
 
         android:gravity="center"
-        android:background="#a19bed86"
+        android:text="@string/text_Logo2"
         android:textColor="#ff085626"
         android:textSize="40dp"
         android:textStyle="bold" />
