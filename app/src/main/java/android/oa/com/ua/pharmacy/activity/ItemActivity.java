@@ -1,17 +1,15 @@
 package android.oa.com.ua.pharmacy.activity;
 
+import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.oa.com.ua.pharmacy.R;
 import android.oa.com.ua.pharmacy.entity.IMedicineItem;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ItemActivity extends ActionBarActivity {
+public class ItemActivity extends Activity {
 
     public static final String ACTION_SHOW_ITEM = "android.oa.com.ua.pharmacy.activity.ItemListActivity.SHOW_ITEM";
 
@@ -44,29 +42,6 @@ public class ItemActivity extends ActionBarActivity {
         Drawable drawable = res.getDrawable(R.drawable.ic_launcher);
         helper.image.setImageDrawable(drawable);
         helper.description.setText(item.getDescription());
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_item, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private class Helper {
