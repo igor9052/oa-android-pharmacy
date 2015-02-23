@@ -19,8 +19,8 @@
         android:id="@+id/item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/image_view"
         android:layout_toLeftOf="@+id/buttons"
+        android:layout_toRightOf="@id/image_view"
         android:padding="5dp"
         android:text="Title"
         android:textSize="20dp" />
@@ -30,8 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_title"
-        android:layout_toRightOf="@id/image_view"
         android:layout_toLeftOf="@+id/buttons"
+        android:layout_toRightOf="@id/image_view"
         android:ellipsize="end"
         android:lineSpacingMultiplier="1.2"
         android:maxLines="3"
@@ -42,29 +42,29 @@
         android:id="@+id/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_alignParentRight="true"
-        android:paddingTop="5dp"
+        android:orientation="vertical"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
+        android:paddingTop="5dp"
 
         >
         <Button
             android:id="@+id/button1"
-            android:text="@string/item_list_button1"
             style="@style/ThreeButtonsOnItemListLandscape"
+            android:text="@string/item_list_button1"
             />
 
         <Button
             android:id="@+id/button2"
-            android:text="@string/item_list_button2"
             style="@style/ThreeButtonsOnItemListLandscape"
+            android:text="@string/item_list_button2"
             />
 
         <Button
-            android:id="@+id/button3"
-            android:text="@string/item_list_button3"
+            android:id="@+id/show_item_details_button"
             style="@style/ThreeButtonsOnItemListLandscape"
+            android:text="@string/details_button_text"
             />
     </LinearLayout>
 </RelativeLayout>

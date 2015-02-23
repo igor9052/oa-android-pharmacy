@@ -46,6 +46,7 @@ public class ItemAdapter extends ArrayAdapter<IMedicineItem> {
         }
 
         Button detailsButton = (Button) view.findViewById(R.id.show_item_details_button);
+
         detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
