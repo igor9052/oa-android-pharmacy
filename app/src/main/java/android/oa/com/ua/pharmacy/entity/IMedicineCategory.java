@@ -5,9 +5,12 @@ import android.os.Parcelable;
 import java.util.List;
 
 public interface IMedicineCategory extends Parcelable {
+
+    Integer getId();
+
     String getName();
 
-    String getImage();
+    Integer getImage();
 
-    List<IMedicineItem> getItems();
+    List<IMedicineProduct> getItems();
 }

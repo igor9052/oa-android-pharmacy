@@ -1,7 +1,7 @@
 package android.oa.com.ua.pharmacy.entity.impl;
 
 import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
-import android.oa.com.ua.pharmacy.entity.IMedicineItem;
+import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
 import android.os.Parcel;
 
 import java.util.ArrayList;
@@ -20,20 +20,29 @@ public class MedicineCategory implements IMedicineCategory {
             return new MedicineCategory[size];
         }
     };
-    private String name;
-    private String image;
-    private List<IMedicineItem> items = new ArrayList<>();
 
-    protected MedicineCategory(String name, String image, List<IMedicineItem> items) {
+    private Integer id;
+    private String name;
+    private Integer image;
+    private List<IMedicineProduct> items = new ArrayList<>();
+
+    protected MedicineCategory(Integer id, String name, Integer image, List<IMedicineProduct> items) {
+        this.id = id;
         this.name = name;
         this.image = image;
         this.items = items;
     }
 
     private MedicineCategory(Parcel in) {
+        id = in.readInt();
         name = in.readString();
-        image = in.readString();
+        image = in.readInt();
         in.readList(items, items.getClass().getClassLoader());
+    }
+
+    @Override
+    public Integer getId() {
+        return null;
     }
 
     @Override
@@ -42,25 +51,24 @@ public class MedicineCategory implements IMedicineCategory {
     }
 
     @Override
-    public String getImage() {
+    public Integer getImage() {
         return image;
     }
 
     @Override
-    public List<IMedicineItem> getItems() {
+    public List<IMedicineProduct> getItems() {
         return items;
     }
 
     @Override
     public String toString() {
         return "MedicineCategory{" +
-                "name='" + name + '\'' +
-                ", image='" + image + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", image=" + image +
                 ", items=" + items +
                 '}';
     }
-
-    //Parcelable methods
 
     @Override
     public boolean equals(Object o) {
@@ -69,6 +77,7 @@ public class MedicineCategory implements IMedicineCategory {
 
         MedicineCategory that = (MedicineCategory) o;
 
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (image != null ? !image.equals(that.image) : that.image != null) return false;
         if (items != null ? !items.equals(that.items) : that.items != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
@@ -78,7 +87,8 @@ public class MedicineCategory implements IMedicineCategory {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (image != null ? image.hashCode() : 0);
         result = 31 * result + (items != null ? items.hashCode() : 0);
         return result;
@@ -91,8 +101,9 @@ public class MedicineCategory implements IMedicineCategory {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(name);
-        dest.writeString(image);
+        dest.writeInt(image);
         dest.writeList(items);
     }
 }

@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:transitionGroup="false">
+
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:src="@drawable/ic_launcher" />
 
     <TextView
-        android:id="@+id/item_title"
+        android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/buttons"
@@ -26,10 +27,10 @@
         android:textSize="20dp" />
 
     <TextView
-        android:id="@+id/item_description"
+        android:id="@+id/product_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/item_title"
+        android:layout_below="@id/product_name"
         android:layout_toLeftOf="@+id/buttons"
         android:layout_toRightOf="@id/image_view"
         android:ellipsize="end"
@@ -49,22 +50,20 @@
         android:paddingTop="5dp"
 
         >
+
         <Button
             android:id="@+id/button1"
             style="@style/ThreeButtonsOnItemListLandscape"
-            android:text="@string/item_list_button1"
-            />
+            android:text="@string/item_list_button1" />
 
         <Button
             android:id="@+id/button2"
             style="@style/ThreeButtonsOnItemListLandscape"
-            android:text="@string/item_list_button2"
-            />
+            android:text="@string/item_list_button2" />
 
         <Button
             android:id="@+id/show_item_details_button"
             style="@style/ThreeButtonsOnItemListLandscape"
-            android:text="@string/details_button_text"
-            />
+            android:text="@string/details_button_text" />
     </LinearLayout>
 </RelativeLayout>

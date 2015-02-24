@@ -22,7 +22,7 @@ public class SplashScreenActivity extends Activity {
                 // Start your app main activity
                 try {
                     ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
-                    for(int i = 0;i<100;i+=10){
+                    for (int i = 0; i < 100; i += 10) {
                         progressBar.setProgress(i);
                         Thread.sleep(500);
                     }
@@ -37,7 +37,6 @@ public class SplashScreenActivity extends Activity {
             }
         }).start();
     }
-
 
     @Override
     protected void onPause() {

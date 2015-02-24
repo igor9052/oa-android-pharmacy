@@ -5,14 +5,15 @@ import android.os.Parcelable;
 /**
  * Created by igor9_000 on 19.02.2015.
  */
-public interface IMedicineItem extends Parcelable {
+public interface IMedicineProduct extends Parcelable {
+
+    Integer getId();
+
     String getName();
 
     String getDescription();
 
-    String getImage();
-
-    int getImageId();
+    Integer getImage();
 
     String getCategory();
 }

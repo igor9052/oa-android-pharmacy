@@ -2,8 +2,8 @@ package android.oa.com.ua.pharmacy.activity;
 
 import android.content.Intent;
 import android.oa.com.ua.pharmacy.R;
-import android.oa.com.ua.pharmacy.entity.IMedicineItem;
-import android.oa.com.ua.pharmacy.entity.impl.MedicineItem;
+import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
+import android.oa.com.ua.pharmacy.entity.impl.MedicineProduct;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -13,9 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class AddNewItemActivity extends ActionBarActivity {
+public class AddNewProductActivity extends ActionBarActivity {
 
-    public static final String ACTION_ADD_NEW_ITEM = "android.oa.com.ua.pharmacy.activity.AddNewItemActivity.ADD_NEW_ITEM";
+    public static final String ACTION_ADD_NEW_PRODUCT = "android.oa.com.ua.pharmacy.activity.AddNewProductActivity.ADD_NEW_PRODUCT";
     public static final String EXTRA_CATEGORY_NAME = "CATEGORY_NAME";
 
     private String categoryName;
@@ -24,7 +24,7 @@ public class AddNewItemActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_item);
-        if (ACTION_ADD_NEW_ITEM.equals(getIntent().getAction())) {
+        if (ACTION_ADD_NEW_PRODUCT.equals(getIntent().getAction())) {
             if (getIntent().hasExtra(EXTRA_CATEGORY_NAME)) {
                 categoryName = getIntent().getStringExtra(EXTRA_CATEGORY_NAME);
                 TextView categoryNameTextView = (TextView) findViewById(R.id.category_name);
@@ -39,10 +39,11 @@ public class AddNewItemActivity extends ActionBarActivity {
                 Intent intent = new Intent();
                 EditText itemName = (EditText) findViewById(R.id.item_name_edit_text);
                 EditText itemDescription = (EditText) findViewById(R.id.item_description_edit_text);
-                IMedicineItem newItem = new MedicineItem(itemName.getText().toString(), "",
+                IMedicineProduct newItem = new MedicineProduct(100, itemName.getText().toString(),
                         itemDescription.getText().toString(),
+                        0,
                         categoryName);
-                intent.putExtra(ItemListActivity.EXTRA_NEW_ITEM, newItem);
+                intent.putExtra(ProductListActivity.EXTRA_NEW_PRODUCT, newItem);
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -53,7 +54,7 @@ public class AddNewItemActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_new_item, menu);
+        getMenuInflater().inflate(R.menu.menu_add_new_product, menu);
         return true;
     }
 
