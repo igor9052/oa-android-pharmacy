@@ -2,28 +2,26 @@
 <resources>
 
     <string name="app_name">Pharmacy</string>
-    <string name="hello_world">Hello world!</string>
+
     <string name="action_settings">Settings</string>
     <string name="done">Done</string>
     <string name="title_activity_product_list">ProductListActivity</string>
-    <string name="add_new">Add new...</string>
+    <string name="add_new">Add new product</string>
     <string name="simple_text_example">This is simple text. This is simple text. This is simple text. This is simple text.</string>
+
+    <string name="title_activity_product"></string>
     <string name="item_list_button1">button1</string>
     <string name="item_list_button2">button2</string>
-    <string name="item_list_button3">button3</string>
-    <string name="title_activity_item">ItemActivity</string>
     <string name="details_button_text">Details</string>
-    <string name="title_activity_add_new_item">AddNewItemActivity</string>
-    <string name="enter_name_of_medicine_edit_text">Enter name of medicine</string>
+    <string name="title_activity_add_new_item">Add a new product</string>
+    <string name="enter_name_of_medicine_edit_text">Name of product</string>
     <string name="choose_category_text_view">Choose a category:</string>
-    <string name="write_description_edit_text">Write a description...</string>
+    <string name="write_description_edit_text">Description of product</string>
     <string name="save_text_button">Save</string>
     <string name="cancel_text_button">Cancel</string>
-    <string name="title_activity_splash">SplashActivity</string>
 
     <string name="text_Logo1">Аптека</string>
     <string name="text_Logo2">onLine</string>
-
     <string name="text_arom">Ароматерапия</string>
     <string name="text_gome">Гомеопатия</string>
     <string name="text_med">Изделия медицинского назначения</string>

@@ -28,7 +28,7 @@
 
         <activity
             android:name=".activity.ProductDetailsActivity"
-            android:label="@string/title_activity_item">
+            android:label="@string/title_activity_product">
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ProductDetailsActivity.SHOW_PRODUCT" />
 
