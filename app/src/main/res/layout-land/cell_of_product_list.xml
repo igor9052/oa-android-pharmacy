@@ -45,25 +45,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:orientation="vertical"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="5dp"
+        android:padding="5dp"
 
         >
 
         <Button
             android:id="@+id/button1"
-            style="@style/ThreeButtonsOnItemListLandscape"
+            style="@style/ThreeButtonsOnProductListLandscape"
             android:text="@string/item_list_button1" />
 
         <Button
             android:id="@+id/button2"
-            style="@style/ThreeButtonsOnItemListLandscape"
+            style="@style/ThreeButtonsOnProductListLandscape"
             android:text="@string/item_list_button2" />
 
         <Button
             android:id="@+id/show_item_details_button"
-            style="@style/ThreeButtonsOnItemListLandscape"
+            style="@style/ThreeButtonsOnProductListLandscape"
             android:text="@string/details_button_text" />
     </LinearLayout>
 </RelativeLayout>

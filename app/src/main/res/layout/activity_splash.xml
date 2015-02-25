@@ -43,7 +43,8 @@
         android:layout_height="20dp"
         android:layout_above="@+id/textLogo2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        android:progressDrawable="@drawable/progress_bar" />
 
 
 </RelativeLayout>

@@ -24,7 +24,7 @@ public class SplashScreenActivity extends Activity {
                     ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
                     for (int i = 0; i < 100; i += 10) {
                         progressBar.setProgress(i);
-                        Thread.sleep(500);
+                        Thread.sleep(200);
                     }
                     Intent intent = new Intent(SplashScreenActivity.this, CatalogActivity.class);
                     startActivity(intent);
