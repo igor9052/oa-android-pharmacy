@@ -102,7 +102,6 @@ public class SplashScreenActivity extends Activity {
                 url = new URL(Settings.Api.BASE_URL + Settings.DATA_FILE);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
-                urlConnection.setDoOutput(true);
                 urlConnection.connect();
 
                 fos = params[0].openFileOutput(Settings.DATA_FILE, MODE_PRIVATE);
