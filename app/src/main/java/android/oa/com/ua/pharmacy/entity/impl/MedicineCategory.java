@@ -1,48 +1,61 @@
 package android.oa.com.ua.pharmacy.entity.impl;
 
 import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
-import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
 import android.os.Parcel;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineCategory implements IMedicineCategory {
+public class MedicineCategory implements IMedicineCategory<MedicineProduct>, android.os.Parcelable {
 
     public static final Creator<MedicineCategory> CREATOR = new Creator<MedicineCategory>() {
-        @Override
         public MedicineCategory createFromParcel(Parcel source) {
             return new MedicineCategory(source);
         }
 
-        @Override
         public MedicineCategory[] newArray(int size) {
             return new MedicineCategory[size];
         }
     };
-
+    @SerializedName("id")
     private Integer id;
+    @SerializedName("name")
     private String name;
-    private Integer image;
-    private List<IMedicineProduct> items = new ArrayList<>();
+    @SerializedName("image_url")
+    private String imageUrl;
+    private int imageId;
+    @SerializedName("items")
+    private List<MedicineProduct> items;
 
-    protected MedicineCategory(Integer id, String name, Integer image, List<IMedicineProduct> items) {
+    public MedicineCategory() {
+    }
+
+    public MedicineCategory(Integer id, String name, String imageUrl, int imageId, List<MedicineProduct> items) {
         this.id = id;
         this.name = name;
-        this.image = image;
+        this.imageUrl = imageUrl;
+        this.imageId = imageId;
         this.items = items;
     }
 
     private MedicineCategory(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
-        image = in.readInt();
-        in.readList(items, items.getClass().getClassLoader());
+        this.id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.name = in.readString();
+        this.imageUrl = in.readString();
+        this.imageId = in.readInt();
+        this.items = new ArrayList<MedicineProduct>();
+        in.readList(this.items, this.items.getClass().getClassLoader());
     }
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override
@@ -50,14 +63,34 @@ public class MedicineCategory implements IMedicineCategory {
         return name;
     }
 
-    @Override
-    public Integer getImage() {
-        return image;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public List<IMedicineProduct> getItems() {
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    @Override
+    public List<MedicineProduct> getItems() {
         return items;
+    }
+
+    public void setItems(List<MedicineProduct> items) {
+        this.items = items;
     }
 
     @Override
@@ -65,7 +98,8 @@ public class MedicineCategory implements IMedicineCategory {
         return "MedicineCategory{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", image=" + image +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", imageId=" + imageId +
                 ", items=" + items +
                 '}';
     }
@@ -77,8 +111,10 @@ public class MedicineCategory implements IMedicineCategory {
 
         MedicineCategory that = (MedicineCategory) o;
 
+        if (imageId != that.imageId) return false;
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (image != null ? !image.equals(that.image) : that.image != null) return false;
+        if (imageUrl != null ? !imageUrl.equals(that.imageUrl) : that.imageUrl != null)
+            return false;
         if (items != null ? !items.equals(that.items) : that.items != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
 
@@ -89,7 +125,8 @@ public class MedicineCategory implements IMedicineCategory {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (image != null ? image.hashCode() : 0);
+        result = 31 * result + (imageUrl != null ? imageUrl.hashCode() : 0);
+        result = 31 * result + imageId;
         result = 31 * result + (items != null ? items.hashCode() : 0);
         return result;
     }
@@ -101,9 +138,10 @@ public class MedicineCategory implements IMedicineCategory {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(name);
-        dest.writeInt(image);
-        dest.writeList(items);
+        dest.writeValue(this.id);
+        dest.writeString(this.name);
+        dest.writeString(this.imageUrl);
+        dest.writeInt(this.imageId);
+        dest.writeList(this.items);
     }
 }

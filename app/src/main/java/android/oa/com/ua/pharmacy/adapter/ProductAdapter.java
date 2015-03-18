@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.List;
 
 /**
@@ -42,7 +44,7 @@ public class ProductAdapter extends ArrayAdapter<IMedicineProduct> {
 
         productName.setText(item.getName());
         description.setText(item.getDescription());
-        image.setImageResource(item.getImage());
+        ImageLoader.getInstance().displayImage(item.getImageUrl(), image);
 
         Button detailsButton = (Button) view.findViewById(R.id.show_item_details_button);
 

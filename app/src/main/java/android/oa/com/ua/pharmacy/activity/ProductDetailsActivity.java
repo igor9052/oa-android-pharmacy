@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 public class ProductDetailsActivity extends Activity {
 
     public static final String ACTION_SHOW_PRODUCT = "android.oa.com.ua.pharmacy.activity.ProductDetailsActivity.SHOW_PRODUCT";
@@ -36,7 +38,7 @@ public class ProductDetailsActivity extends Activity {
         IMedicineProduct item = getIntent().getParcelableExtra(EXTRA_PRODUCT);
         helper.title.setText(item.getName());
         helper.description.setText(item.getDescription());
-        helper.image.setImageResource(item.getImage());
+        ImageLoader.getInstance().displayImage(item.getImageUrl(), helper.image);
     }
 
     private class Helper {

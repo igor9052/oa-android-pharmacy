@@ -4,13 +4,13 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public interface IMedicineCategory extends Parcelable {
+public interface IMedicineCategory<T extends IMedicineProduct> extends Parcelable {
 
     Integer getId();
 
     String getName();
 
-    Integer getImage();
+    String getImageUrl();
 
-    List<IMedicineProduct> getItems();
+    List<T> getItems();
 }

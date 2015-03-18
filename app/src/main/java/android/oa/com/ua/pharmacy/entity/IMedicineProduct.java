@@ -13,7 +13,7 @@ public interface IMedicineProduct extends Parcelable {
 
     String getDescription();
 
-    Integer getImage();
+    String getImageUrl();
 
     String getCategory();
 }

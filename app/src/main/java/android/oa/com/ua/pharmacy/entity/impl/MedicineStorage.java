@@ -6,19 +6,19 @@ import android.oa.com.ua.pharmacy.entity.IMedicineStorage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineStorage implements IMedicineStorage {
+public class MedicineStorage implements IMedicineStorage<MedicineCategory> {
 
-    private List<IMedicineCategory> categories = new ArrayList<>();
+    private List<MedicineCategory> categories;
 
     public MedicineStorage() {
     }
 
-    public MedicineStorage(List<IMedicineCategory> categories) {
+    public MedicineStorage(List<MedicineCategory> categories) {
         this.categories = categories;
     }
 
     @Override
-    public List<IMedicineCategory> getCategories() {
+    public List<MedicineCategory> getCategories() {
         return categories;
     }
 

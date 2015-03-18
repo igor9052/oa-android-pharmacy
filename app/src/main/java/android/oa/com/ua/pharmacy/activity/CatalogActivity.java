@@ -8,6 +8,7 @@ import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
 import android.oa.com.ua.pharmacy.entity.IMedicineStorage;
 import android.oa.com.ua.pharmacy.entity.impl.MedicineStorageFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -16,12 +17,15 @@ import android.widget.GridView;
 public class CatalogActivity extends Activity {
 
     private GridView gridView;
-    private IMedicineStorage catalog = MedicineStorageFactory.makeStorage(MedicineStorageFactory.TEST_CATALOG);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog_grid);
+
+        IMedicineStorage catalog = MedicineStorageFactory.makeStorage(getApplication(), MedicineStorageFactory.LOCAL_JSON_DATA);
+        Log.i("CATALOG_ACTIVITY", catalog.toString());
         gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ImageTextAdapterMenu(this, catalog.getCategories()));
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

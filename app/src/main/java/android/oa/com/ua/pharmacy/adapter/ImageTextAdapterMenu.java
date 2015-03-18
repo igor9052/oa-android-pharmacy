@@ -10,12 +10,29 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.List;
 
 public class ImageTextAdapterMenu extends ArrayAdapter<IMedicineCategory> {
 
+    private DisplayImageOptions options;
+
     public ImageTextAdapterMenu(Context context, List<IMedicineCategory> objects) {
         super(context, 0, objects);
+        initDisplayImageOptions();
+    }
+
+    private void initDisplayImageOptions() {
+        int imageForEmptyUriId = R.drawable.log;
+        int imageOnFailId = R.drawable.log;
+        int imageOnLoading = R.drawable.log;
+        options = new DisplayImageOptions.Builder().cacheInMemory(true)
+                .cacheOnDisk(true).resetViewBeforeLoading(true)
+                .showImageForEmptyUri(imageForEmptyUriId)
+                .showImageOnFail(imageOnFailId)
+                .showImageOnLoading(imageOnLoading).build();
     }
 
     @Override
@@ -31,7 +48,9 @@ public class ImageTextAdapterMenu extends ArrayAdapter<IMedicineCategory> {
         }
         ImageView imageView = (ImageView) grid.findViewById(R.id.image_view_grid);
         TextView textView = (TextView) grid.findViewById(R.id.text_view_grid);
-        imageView.setImageResource(category.getImage());
+
+
+        ImageLoader.getInstance().displayImage(category.getImageUrl(), imageView, options);
         textView.setText(category.getName());
         return grid;
     }

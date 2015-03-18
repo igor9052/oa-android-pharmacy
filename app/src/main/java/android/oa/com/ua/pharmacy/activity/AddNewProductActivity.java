@@ -41,6 +41,7 @@ public class AddNewProductActivity extends ActionBarActivity {
                 EditText itemDescription = (EditText) findViewById(R.id.item_description_edit_text);
                 IMedicineProduct newItem = new MedicineProduct(100, itemName.getText().toString(),
                         itemDescription.getText().toString(),
+                        "",
                         0,
                         categoryName);
                 intent.putExtra(ProductListActivity.EXTRA_NEW_PRODUCT, newItem);
