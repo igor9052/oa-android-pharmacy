@@ -55,7 +55,7 @@
 
         <activity
             android:name=".activity.CatalogActivity"
-            android:label="CatalogActivity"></activity>
+            android:label="CatalogActivity" />
 
     </application>
 </manifest>
