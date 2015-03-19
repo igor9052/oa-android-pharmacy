@@ -2,12 +2,23 @@ package android.oa.com.ua.pharmacy.entity.impl;
 
 import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
 import android.oa.com.ua.pharmacy.entity.IMedicineStorage;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MedicineStorage implements IMedicineStorage<MedicineCategory> {
 
+    public static final Parcelable.Creator<MedicineStorage> CREATOR = new Parcelable.Creator<MedicineStorage>() {
+        public MedicineStorage createFromParcel(Parcel source) {
+            return new MedicineStorage(source);
+        }
+
+        public MedicineStorage[] newArray(int size) {
+            return new MedicineStorage[size];
+        }
+    };
     private List<MedicineCategory> categories;
 
     public MedicineStorage() {
@@ -15,6 +26,10 @@ public class MedicineStorage implements IMedicineStorage<MedicineCategory> {
 
     public MedicineStorage(List<MedicineCategory> categories) {
         this.categories = categories;
+    }
+
+    private MedicineStorage(Parcel in) {
+        in.readTypedList(categories, MedicineCategory.CREATOR);
     }
 
     @Override
@@ -54,5 +69,15 @@ public class MedicineStorage implements IMedicineStorage<MedicineCategory> {
     @Override
     public int hashCode() {
         return categories != null ? categories.hashCode() : 0;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeTypedList(categories);
     }
 }

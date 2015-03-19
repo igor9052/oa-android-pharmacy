@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineCategory implements IMedicineCategory<MedicineProduct>, android.os.Parcelable {
+public class MedicineCategory implements IMedicineCategory<MedicineProduct> {
 
     public static final Creator<MedicineCategory> CREATOR = new Creator<MedicineCategory>() {
         public MedicineCategory createFromParcel(Parcel source) {
