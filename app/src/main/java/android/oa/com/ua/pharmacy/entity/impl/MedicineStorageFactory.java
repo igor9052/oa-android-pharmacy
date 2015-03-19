@@ -55,8 +55,7 @@ public class MedicineStorageFactory {
 
         Log.i(TAG, stringBuilder.toString());
         Gson gson = new Gson();
-        MedicineStorage medicineStorage = gson.fromJson(stringBuilder.toString(), MedicineStorage.class);
-        return medicineStorage;
+        return gson.fromJson(stringBuilder.toString(), MedicineStorage.class);
     }
 
     private static IMedicineStorage createCatalog() {
