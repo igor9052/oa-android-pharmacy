@@ -27,6 +27,7 @@ public class MedicineProduct implements IMedicineProduct {
     private Integer imageId;
     @SerializedName("category_name")
     private String categoryName;
+    private Integer categoryId;
 
     public MedicineProduct() {
     }
@@ -38,6 +39,7 @@ public class MedicineProduct implements IMedicineProduct {
         this.imageUrl = imageUrl;
         this.imageId = imageId;
         this.categoryName = categoryName;
+        this.categoryId = 0;
     }
 
     private MedicineProduct(Parcel in) {
@@ -47,6 +49,7 @@ public class MedicineProduct implements IMedicineProduct {
         this.imageUrl = in.readString();
         this.imageId = (Integer) in.readValue(Integer.class.getClassLoader());
         this.categoryName = in.readString();
+        this.categoryId = (Integer) in.readValue(Integer.class.getClassLoader());
     }
 
     @Override
@@ -97,6 +100,7 @@ public class MedicineProduct implements IMedicineProduct {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -128,6 +132,7 @@ public class MedicineProduct implements IMedicineProduct {
         this.imageUrl = imageUrl;
     }
 
+    @Override
     public Integer getImageId() {
         return imageId;
     }
@@ -155,6 +160,16 @@ public class MedicineProduct implements IMedicineProduct {
     }
 
     @Override
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    @Override
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.id);
         dest.writeString(this.name);
@@ -162,5 +177,6 @@ public class MedicineProduct implements IMedicineProduct {
         dest.writeString(this.imageUrl);
         dest.writeValue(this.imageId);
         dest.writeString(this.categoryName);
+        dest.writeValue(this.categoryId);
     }
 }

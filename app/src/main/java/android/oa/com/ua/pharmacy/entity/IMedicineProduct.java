@@ -9,6 +9,8 @@ public interface IMedicineProduct extends Parcelable {
 
     Integer getId();
 
+    void setId(Integer id);
+
     String getName();
 
     String getDescription();
@@ -16,4 +18,10 @@ public interface IMedicineProduct extends Parcelable {
     String getImageUrl();
 
     String getCategory();
+
+    Integer getImageId();
+
+    Integer getCategoryId();
+
+    void setCategoryId(Integer categoryId);
 }

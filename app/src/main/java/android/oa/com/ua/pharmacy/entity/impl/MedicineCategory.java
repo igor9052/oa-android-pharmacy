@@ -54,6 +54,7 @@ public class MedicineCategory implements IMedicineCategory<MedicineProduct> {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }

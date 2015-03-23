@@ -21,6 +21,8 @@ public class MedicineStorageFactory {
     public static final String TEST_MEDICINE_STORAGE = "default";
     public static final String TEST_CATALOG = "test_catalog";
     public static final String LOCAL_JSON_DATA = "local_json";
+    public static final String LOCAL_DB_DATA = "local_db";
+
     private static final String TAG = "MedicineStorageFactory";
     private static int[] mThumbIds = {R.drawable.aromat, R.drawable.cosmet, R.drawable.gomeo, R.drawable.med, R.drawable.mom_child, R.drawable.preparaty};
     private static String[] textArray = {"Ароматерапия", "Косметика", "Гомеопатия", "Изделия медицинского назначения", "Товары для детей и мам", "Лекарственные препараты"};
@@ -34,9 +36,17 @@ public class MedicineStorageFactory {
                 return createCatalog();
             case LOCAL_JSON_DATA:
                 return getDataFromJson(context);
+            case LOCAL_DB_DATA:
+                return getDataFromDb(context);
             default:
                 return createTestMedicineStorage();
         }
+    }
+
+    private static IMedicineStorage getDataFromDb(Context context) {
+        IMedicineStorage<MedicineCategory> storage = getDataFromJson(context);
+
+        return null;
     }
 
     private static IMedicineStorage getDataFromJson(Context context) {

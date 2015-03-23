@@ -8,6 +8,8 @@ public interface IMedicineCategory<T extends IMedicineProduct> extends Parcelabl
 
     Integer getId();
 
+    void setId(Integer id);
+
     String getName();
 
     String getImageUrl();

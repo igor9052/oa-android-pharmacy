@@ -5,6 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.oa.com.ua.pharmacy.R;
+import android.oa.com.ua.pharmacy.db.dao.impl.MedicineCategoryDAOImpl;
+import android.oa.com.ua.pharmacy.db.dao.impl.MedicineProductDAOImpl;
+import android.oa.com.ua.pharmacy.entity.IMedicineCategory;
+import android.oa.com.ua.pharmacy.entity.IMedicineStorage;
+import android.oa.com.ua.pharmacy.entity.impl.MedicineCategory;
+import android.oa.com.ua.pharmacy.entity.impl.MedicineProduct;
+import android.oa.com.ua.pharmacy.entity.impl.MedicineStorage;
+import android.oa.com.ua.pharmacy.entity.impl.MedicineStorageFactory;
 import android.oa.com.ua.pharmacy.util.Settings;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -88,6 +96,7 @@ public class SplashScreenActivity extends Activity {
 
         @Override
         protected Void doInBackground(Context... params) {
+            Context context = params[0];
             int totalSize;
             int downloadedSize;
             byte[] buffer;
@@ -104,30 +113,51 @@ public class SplashScreenActivity extends Activity {
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
 
-                fos = params[0].openFileOutput(Settings.DATA_FILE, MODE_PRIVATE);
+                fos = context.openFileOutput(Settings.DATA_FILE, MODE_PRIVATE);
                 inputStream = urlConnection.getInputStream();
 
                 totalSize = urlConnection.getContentLength();
                 downloadedSize = 0;
                 buffer = new byte[totalSize / 10];
 
-                boolean isWiFi = ((ConnectivityManager) params[0].getSystemService(Context.CONNECTIVITY_SERVICE))
+                boolean isWiFi = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE))
                         .getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_WIFI;
 
                 while ((bufferLength = inputStream.read(buffer)) > 0) {
                     fos.write(buffer, 0, bufferLength);
                     downloadedSize += bufferLength;
-                    publishProgress(downloadedSize, totalSize);
+                    publishProgress(downloadedSize, totalSize + (totalSize / 10));
                     if (isWiFi) {
-                        Thread.sleep(500);
+                        Thread.sleep(300);
                     }
                 }
                 fos.close();
                 inputStream.close();
+                initDbWithData(context);
+                publishProgress(100, 100);
             } catch (InterruptedException | IOException e) {
                 e.printStackTrace();
             }
             return null;
+        }
+
+        private void initDbWithData(Context context) {
+            int currentCategoryId = 0;
+            int currentProductId = 0;
+            IMedicineStorage medicineStorage = MedicineStorageFactory.makeStorage(context, MedicineStorageFactory.LOCAL_JSON_DATA);
+            MedicineCategoryDAOImpl medicineCategoryDAO = new MedicineCategoryDAOImpl(context);
+            MedicineProductDAOImpl medicineProductDAO = new MedicineProductDAOImpl(context);
+            for (IMedicineCategory category : ((MedicineStorage) medicineStorage).getCategories()) {
+                currentCategoryId++;
+                category.setId(currentCategoryId);
+                medicineCategoryDAO.insert((MedicineCategory) category);
+                for (MedicineProduct product : ((MedicineCategory) category).getItems()) {
+                    currentProductId++;
+                    product.setCategoryId(currentCategoryId);
+                    product.setId(currentProductId);
+                    medicineProductDAO.insert(product);
+                }
+            }
         }
 
         @Override
