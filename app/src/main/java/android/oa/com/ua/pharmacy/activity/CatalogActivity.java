@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -41,6 +43,15 @@ public class CatalogActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        ImageView settings = (ImageView) findViewById(R.id.image_view_settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CatalogActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Log.i(TAG, "ON_CREATE");
     }
 }

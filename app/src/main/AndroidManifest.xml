@@ -19,43 +19,43 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.ProductListActivity"
             android:exported="false"
             android:label="@string/title_activity_product_list">
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ProductListActivity.SHOW_PRODUCT_LIST" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.ProductDetailsActivity"
             android:exported="false"
             android:label="@string/title_activity_product">
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ProductDetailsActivity.SHOW_PRODUCT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.AddNewProductActivity"
             android:exported="false"
             android:label="@string/title_activity_add_new_item">
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.AddNewProductActivity.ADD_NEW_PRODUCT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.CatalogActivity"
             android:label="CatalogActivity" />
-
     </application>
+
 </manifest>
