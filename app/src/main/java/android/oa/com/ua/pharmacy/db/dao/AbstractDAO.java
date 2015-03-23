@@ -20,7 +20,7 @@ public abstract class AbstractDAO {
 
     protected AbstractDAO(Context context) {
         this.context = context;
-        mDbHelper = new PharmacyDbContract.PharmacyDbHelper(context);
+        mDbHelper = PharmacyDbContract.PharmacyDbHelper.getInstance(context);
     }
 
     protected Integer getMaxId(String tableName) {

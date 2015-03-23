@@ -52,13 +52,21 @@ public final class PharmacyDbContract {
 
     public static class PharmacyDbHelper extends SQLiteOpenHelper {
 
+
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "pharmacy.db";
+        private static PharmacyDbHelper dbHelper = null;
         private Context context;
 
-        public PharmacyDbHelper(Context context) {
+        private PharmacyDbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             this.context = context;
+        }
+
+        public static PharmacyDbHelper getInstance(Context context) {
+            if (dbHelper == null) {
+                return dbHelper = new PharmacyDbHelper(context);
+            } else return dbHelper;
         }
 
         @Override
