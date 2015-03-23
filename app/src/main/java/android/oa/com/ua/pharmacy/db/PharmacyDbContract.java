@@ -52,7 +52,6 @@ public final class PharmacyDbContract {
 
     public static class PharmacyDbHelper extends SQLiteOpenHelper {
 
-
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "pharmacy.db";
         private static PharmacyDbHelper dbHelper = null;
@@ -88,6 +87,4 @@ public final class PharmacyDbContract {
             return "select MAX(" + tableName + "." + BaseColumns._ID + ") from " + tableName;
         }
     }
-
-
 }
