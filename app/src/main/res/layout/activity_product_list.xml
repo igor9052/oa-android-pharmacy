@@ -3,30 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="0dp"
     tools:context="android.oa.com.ua.pharmacy.activity.ProductListActivity">
 
     <TextView
         android:id="@+id/category_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Category"
-        android:textSize="24dp" />
+        android:background="#a19bed86"
+        android:padding="5dp"
+        android:textColor="#ff085626"
+        android:textSize="24sp" />
 
     <ListView
         android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingBottom="5dp"></ListView>
+        android:padding="5dp" />
 
     <Button
         android:id="@+id/add_new_item_button"
         style="@style/ThreeButtonsOnProductList"
         android:layout_margin="0dp"
         android:layout_weight="0"
-        android:text="Add new..." />
+        android:text="@string/text_add_new" />
 </LinearLayout>

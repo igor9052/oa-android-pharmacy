@@ -29,5 +29,6 @@
     <string name="text_mom">Товары для детей и мам</string>
     <string name="text_prep">Лекарственные препараты</string>
     <string name="text_image_content_description">Image</string>
+    <string name="text_add_new">Add new...</string>
 
 </resources>
