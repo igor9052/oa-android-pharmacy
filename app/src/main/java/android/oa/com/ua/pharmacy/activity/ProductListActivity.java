@@ -9,8 +9,7 @@ import android.oa.com.ua.pharmacy.db.dao.impl.MedicineProductDAOImpl;
 import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
 import android.oa.com.ua.pharmacy.entity.impl.MedicineProduct;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -52,15 +51,16 @@ public class ProductListActivity extends Activity {
         ListView listView = (ListView) findViewById(R.id.list_item);
         listView.setAdapter(adapter);
 
-        Button button = (Button) findViewById(R.id.add_new_item_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddNewProductActivity.ACTION_ADD_NEW_PRODUCT);
-                intent.putExtra(AddNewProductActivity.EXTRA_CATEGORY_NAME, categoryName);
-                startActivityForResult(intent, ADD_NEW_PRODUCT_REQUEST_CODE);
-            }
-        });
+        ((ViewGroup) findViewById(R.id.add_new_item_button).getParent()).removeView(findViewById(R.id.add_new_item_button));
+//        Button button = (Button) findViewById(R.id.add_new_item_button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(AddNewProductActivity.ACTION_ADD_NEW_PRODUCT);
+//                intent.putExtra(AddNewProductActivity.EXTRA_CATEGORY_NAME, categoryName);
+//                startActivityForResult(intent, ADD_NEW_PRODUCT_REQUEST_CODE);
+//            }
+//        });
 
     }
 
