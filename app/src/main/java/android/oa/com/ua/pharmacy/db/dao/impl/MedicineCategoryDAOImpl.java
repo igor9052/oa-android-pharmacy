@@ -32,6 +32,7 @@ public class MedicineCategoryDAOImpl extends AbstractDAO implements IMedicineCat
         db.insert(PharmacyDbContract.Category.TABLE_NAME,
                 null,
                 values);
+        db.close();
     }
 
     @Override
@@ -63,6 +64,7 @@ public class MedicineCategoryDAOImpl extends AbstractDAO implements IMedicineCat
         IMedicineProductDAO productDAO = new MedicineProductDAOImpl(context);
         medicineCategory.setItems(productDAO.selectByCategoryId(medicineCategory.getId()));
         cursor.close();
+        db.close();
         return medicineCategory;
     }
 
@@ -90,7 +92,7 @@ public class MedicineCategoryDAOImpl extends AbstractDAO implements IMedicineCat
             } while (cursor.moveToNext());
             cursor.close();
         }
-
+        db.close();
         return medicineCategoryList;
     }
 

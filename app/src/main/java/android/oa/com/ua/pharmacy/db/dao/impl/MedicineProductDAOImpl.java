@@ -37,6 +37,7 @@ public class MedicineProductDAOImpl extends AbstractDAO implements IMedicineProd
                 null,
                 values
         );
+        db.close();
     }
 
     @Override
@@ -100,7 +101,7 @@ public class MedicineProductDAOImpl extends AbstractDAO implements IMedicineProd
         } while (cursor.moveToNext());
 
         cursor.close();
-
+        db.close();
         return productList;
     }
 
