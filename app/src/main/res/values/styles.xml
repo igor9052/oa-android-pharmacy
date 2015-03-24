@@ -24,4 +24,10 @@
         <item name="android:layout_margin">2dp</item>
     </style>
 
+    <style name="MyToolbar" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">#ff085626</item>
+        <item name="android:background">#a19bed86</item>
+    </style>
+
+
 </resources>

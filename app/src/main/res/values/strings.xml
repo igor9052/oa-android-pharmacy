@@ -30,5 +30,6 @@
     <string name="text_prep">Лекарственные препараты</string>
     <string name="text_image_content_description">Image</string>
     <string name="text_add_new">Add new&#8230;</string>
+    <string name="title_categories">Categories</string>
 
 </resources>

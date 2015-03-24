@@ -6,14 +6,13 @@
     android:padding="0dp"
     tools:context="android.oa.com.ua.pharmacy.activity.ProductListActivity">
 
-    <TextView
-        android:id="@+id/category_name"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_product_list"
+        style="@style/MyToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#a19bed86"
-        android:padding="5dp"
-        android:textColor="#ff085626"
-        android:textSize="24sp" />
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.Toolbar>
 
     <ListView
         android:id="@+id/list_item"

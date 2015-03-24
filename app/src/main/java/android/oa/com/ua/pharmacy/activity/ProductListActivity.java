@@ -9,9 +9,9 @@ import android.oa.com.ua.pharmacy.db.dao.impl.MedicineProductDAOImpl;
 import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
 import android.oa.com.ua.pharmacy.entity.impl.MedicineProduct;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +33,9 @@ public class ProductListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_product_list);
+
         if (ACTION_SHOW_PRODUCT_LIST.equals(getIntent().getAction())) {
             if (getIntent().hasExtra(EXTRA_CATEGORY_ID)) {
                 categoryId = getIntent().getIntExtra(EXTRA_CATEGORY_ID, -1);
@@ -44,9 +47,10 @@ public class ProductListActivity extends Activity {
             }
             if (getIntent().hasExtra(EXTRA_CATEGORY_NAME)) {
                 categoryName = getIntent().getStringExtra(EXTRA_CATEGORY_NAME);
-                ((TextView) findViewById(R.id.category_name)).setText(categoryName);
             }
         }
+        toolbar.setTitle(R.string.title_categories);
+        toolbar.setSubtitle(categoryName);
         adapter = new ProductAdapter(this, items);
         ListView listView = (ListView) findViewById(R.id.list_item);
         listView.setAdapter(adapter);
