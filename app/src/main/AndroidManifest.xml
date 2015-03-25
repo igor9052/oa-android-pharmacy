@@ -26,7 +26,11 @@
         <activity
             android:name=".activity.ProductListActivity"
             android:exported="false"
-            android:label="@string/title_activity_product_list">
+            android:label="@string/title_activity_product_list"
+            android:parentActivityName=".activity.CatalogActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.CatalogActivity" />
             <intent-filter>
                 <action android:name="android.oa.com.ua.pharmacy.activity.ProductListActivity.SHOW_PRODUCT_LIST" />
 

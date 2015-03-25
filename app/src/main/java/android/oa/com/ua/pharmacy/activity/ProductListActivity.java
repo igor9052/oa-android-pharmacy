@@ -10,8 +10,10 @@ import android.oa.com.ua.pharmacy.entity.IMedicineProduct;
 import android.oa.com.ua.pharmacy.entity.impl.MedicineProduct;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,7 @@ public class ProductListActivity extends Activity {
         setContentView(R.layout.activity_product_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_product_list);
+        toolbar.setNavigationIcon(R.drawable.ic_launcher);
 
         if (ACTION_SHOW_PRODUCT_LIST.equals(getIntent().getAction())) {
             if (getIntent().hasExtra(EXTRA_CATEGORY_ID)) {
@@ -56,6 +59,14 @@ public class ProductListActivity extends Activity {
         listView.setAdapter(adapter);
 
         ((ViewGroup) findViewById(R.id.add_new_item_button).getParent()).removeView(findViewById(R.id.add_new_item_button));
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProductListActivity.this, "NavigationOnClickListener", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 //        Button button = (Button) findViewById(R.id.add_new_item_button);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -83,4 +94,6 @@ public class ProductListActivity extends Activity {
             }
         }
     }
+
+
 }
