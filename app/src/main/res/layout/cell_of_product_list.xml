@@ -8,6 +8,7 @@
         android:id="@+id/image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/text_image_content_description"
         android:maxHeight="100dp"
         android:maxWidth="100dp"
         android:minHeight="100dp"
@@ -18,18 +19,20 @@
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/image_view"
         android:layout_toRightOf="@id/image_view"
         android:ellipsize="end"
         android:maxLines="1"
         android:padding="5dp"
-        android:text="Title"
-        android:textSize="20dp" />
+        android:text="Product name"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/product_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/product_name"
+        android:layout_toEndOf="@id/image_view"
         android:layout_toRightOf="@id/image_view"
         android:ellipsize="end"
         android:lineSpacingMultiplier="1.2"
@@ -49,13 +52,13 @@
             android:text="button1" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_add_to_cart"
             style="@style/ThreeButtonsOnProductList"
-            android:text="button2" />
+            android:text="@string/button_text_add_to_cart" />
 
         <Button
             android:id="@+id/show_item_details_button"
             style="@style/ThreeButtonsOnProductList"
-            android:text="@string/details_button_text" />
+            android:text="@string/button_text_details" />
     </LinearLayout>
 </RelativeLayout>

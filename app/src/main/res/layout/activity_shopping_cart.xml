@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="android.oa.com.ua.pharmacy.activity.ShoppingCartActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_shopping_cart"
+        style="@style/MyToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/text_shopping_cart_title">
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/listview_shopping_cart_entities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp" />
+
+</LinearLayout>

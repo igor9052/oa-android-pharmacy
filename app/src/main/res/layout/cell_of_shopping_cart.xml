@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_view_shopping_cart_cell"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/text_image_content_description"
+        android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/text_amount_shopping_cart_cell"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:text="@string/text_zero"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_product_name_shopping_cart_cell"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_toEndOf="@id/image_view_shopping_cart_cell"
+        android:layout_toLeftOf="@id/text_amount_shopping_cart_cell"
+        android:layout_toRightOf="@id/image_view_shopping_cart_cell"
+        android:layout_toStartOf="@id/text_amount_shopping_cart_cell"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:text="Product name"
+        android:textSize="20sp" />
+
+</RelativeLayout>

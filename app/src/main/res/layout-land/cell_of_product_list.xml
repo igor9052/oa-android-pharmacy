@@ -55,13 +55,13 @@
             android:text="@string/item_list_button1" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button_add_to_cart"
             style="@style/ThreeButtonsOnProductListLandscape"
-            android:text="@string/item_list_button2" />
+            android:text="@string/button_text_add_to_cart" />
 
         <Button
             android:id="@+id/show_item_details_button"
             style="@style/ThreeButtonsOnProductListLandscape"
-            android:text="@string/details_button_text" />
+            android:text="@string/button_text_details" />
     </LinearLayout>
 </RelativeLayout>

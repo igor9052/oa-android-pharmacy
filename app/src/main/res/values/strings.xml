@@ -12,7 +12,7 @@
     <string name="title_activity_product"></string>
     <string name="item_list_button1">button1</string>
     <string name="item_list_button2">button2</string>
-    <string name="details_button_text">Details</string>
+    <string name="button_text_details">Details</string>
     <string name="title_activity_add_new_item">Add a new product</string>
     <string name="enter_name_of_medicine_edit_text">Name of product</string>
     <string name="choose_category_text_view">Choose a category:</string>
@@ -31,5 +31,12 @@
     <string name="text_image_content_description">Image</string>
     <string name="text_add_new">Add new&#8230;</string>
     <string name="title_categories">Categories</string>
+    <string name="text_zero">0</string>
+    <string name="button_text_add_to_cart">Add to cart</string>
+    <string name="product_list_message_add_product_to_shopping_cart">" has been added to shopping cart!"</string>
+    <string name="title_activity_shopping_cart">ShoppingCartActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="text_shopping_cart_title">Shopping cart</string>
 
 </resources>
